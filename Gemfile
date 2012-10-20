@@ -26,3 +26,11 @@ end
 gem 'bootstrap-sass', '2.0.4'
 
 gem 'annotate', '2.5.0', group: :development
+
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+end
+
+group :production do
+  gem 'pg'
+end
