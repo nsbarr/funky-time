@@ -1,2 +1,23 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+
+      <%= f.label :prompt %>
+      <%= f.text_field :prompt %>
+
+      <%= f.label :bid %>
+      <%= f.text_field :bid %>
+<br />
+<br />
+
+      <%= f.submit "Text Me a Poem!", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
