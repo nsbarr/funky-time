@@ -3,3 +3,22 @@
 
 en:
   hello: "Hello world"
+  
+  activerecord:
+      models:
+          user:
+      attributes:
+          user:
+              phone: "Phone number"
+              prompt: "Inspiration"
+          
+      errors:
+          models:
+              user:
+                  attributes:
+                      phone:
+                          blank: "is required"
+                          invalid: "must be a US # with 10 digits"
+                      prompt:
+                          blank: "is required"
+                          too_long: "is too long"

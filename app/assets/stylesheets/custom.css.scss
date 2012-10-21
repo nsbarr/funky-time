@@ -32,14 +32,305 @@ input, textarea, select, .uneditable-input {
 }
 
 #error_explanation {
-  color: #f00;
+    position: absolute;
+    top:350px;
+    left:39px;
   ul {
     list-style: none;
     margin: 0 0 18px 0;
+    color: #f00;
+  
+  }
+  li {
+
   }
 }
 
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+ }
+ 
+ /* Easel */
+ html, body {
+   margin: 0px;
+   padding: 0px;
+   background-color: #ffffff;
+ }
+ #page-wrapper {
+   position: relative;
+   /* centers the document */
+   margin: 0 auto;
+   /*
+   hides anything drawn off canvas.
+   remove overflow and height to see things drawn off canvas.
+   */
+   overflow: hidden;
+   height: 1000px;
+ }
+ /* Set floating dom-heading margins to 0 */
+ [class*="dom-heading"] {
+   margin: 0;
+ }
+ .rectangle {
+   background: #80ccff;
+   border: none;
+   margin: 0px;
+   width: 978px;
+   height: 478px;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+ }
+ .dom-heading {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 32pt;
+   overflow: hidden;
+   width: 819px;
+   height: 116px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 122px;
+   left: 41px;
+ }
+ .dom-heading-1 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 20pt;
+   overflow: hidden;
+   width: 300px;
+   height: 50px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 266px;
+   left: 39px;
+ }
+ .dom-heading-2 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 20pt;
+   overflow: hidden;
+   width: 400px;
+   height: 50px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 266px;
+   left: 265px;
+ }
+ .basic-button {
+   width: 185px;
+   height: 57px;
+   border-radius: 8px;
+   color: #ffffff;
+   font-family:'Helvetica Neue';
+   font-size: 12pt;
+   font-weight: 400;
+   border: 1px solid #0054a3;
+   background-color: #3d88cc;
+   background-image: -moz-linear-gradient(top, #3d88cc 0%, #035199 100%);
+   background-image: -webkit-linear-gradient(top, #3d88cc 0%, #035199 100%);
+   background-image: -o-linear-gradient(top, #3d88cc 0%, #035199 100%);
+   background-image: linear-gradient(top, #3d88cc 0%, #035199 100%);
+   text-decoration: none;
+   text-shadow: rgba(255, 255, 255, 0.701961) 0px 0px 10px;
+   position: absolute;
+   top: 310px;
+   left: 535px;
+ }
+ .textinput {
+   width: 200px;
+   height: 47px;
+   padding: 5px 8px;
+   font-size: 18pt;
+   font-family:'Helvetica Neue';
+   color: #333333;
+   background-color: #ffffff;
+   border: 1px solid #cfcfcf;
+   border-radius: 2px;
+   -moz-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   -o-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   font-weight: normal;
+   text-decoration: none;
+   position: absolute;
+   top: 317px;
+   left: 265px;
+ }
+ .textinput-1 {
+   width: 160px;
+   height: 47px;
+   padding: 5px 8px;
+   font-size: 18pt;
+   font-family:'Helvetica Neue';
+   color: #333333;
+   background-color: #ffffff;
+   border: 1px solid #cfcfcf;
+   border-radius: 2px;
+   -moz-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   -o-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 7px 0px inset;
+   font-weight: normal;
+   text-decoration: none;
+   position: absolute;
+   top: 317px;
+   left: 39px;
+ }
+ .dom-heading-3 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'trebuchet ms';
+   border: none;
+   font-size: 64pt;
+   overflow: hidden;
+   width: 980px;
+   height: 91px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   text-shadow: rgba(255, 255, 255, 0.498039) 2px 3px 0px;
+   position: absolute;
+   top: 20px;
+   left: 40px;
+ }
+ .dom-heading-4 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 32pt;
+   overflow: hidden;
+   width: 818px;
+   height: 55px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 505px;
+   left: 42px;
+ }
+ .dom-heading-5 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 20pt;
+   overflow: hidden;
+   width: 680px;
+   height: 50px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 570px;
+   left: 40px;
+ }
+ .dom-heading-6 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 20pt;
+   overflow: hidden;
+   width: 680px;
+   height: 50px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 694px;
+   left: 40px;
+ }
+ .dom-heading-7 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 16pt;
+   overflow: hidden;
+   width: 555px;
+   height: 94px;
+   color: #333333;
+   font-weight: normal;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 607px;
+   left: 40px;
+ }
+ .dom-heading-8 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 16pt;
+   overflow: hidden;
+   width: 555px;
+   height: 94px;
+   color: #333333;
+   font-weight: normal;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 732px;
+   left: 40px;
+ }
+ 
+ .dom-heading-10 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 20pt;
+   overflow: hidden;
+   width: 680px;
+   height: 50px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 790px;
+   left: 40px;
+ }
+ .dom-heading-9 {
+   background-color: rgba(0, 0, 0, 0);
+   font-family:'helvetica neue';
+   border: none;
+   font-size: 16pt;
+   overflow: hidden;
+   width: 555px;
+   height: 94px;
+   color: #333333;
+   font-weight: normal;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 827px;
+   left: 40px;
+ }
+ .container {
+     background-image:url('bedge_grunge.png');
  }

@@ -1,29 +1,50 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="utf-8" />
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="fontawesome.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight%7CFlamenco%7CFedero%7CYesteryear%7CJosefin+Sans%7CSpinnaker%7CSansita+One%7CHandlee%7CDroid+Sans"
+    media="screen" rel="stylesheet" type="text/css" />
+    <!-- Typekit fonts require an account and a kit containing the fonts used. see https://typekit.com/plans
+    for details. <script type="text/javascript" src="//use.typekit.net/YOUR-KIT-ID.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    -->
 </head>
 <body>
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<div class="container">
+<!--<% provide(:title, 'Sign up') %> -->
+<div id="page-wrapper">
+     <div class="rectangle">
+       <h2 class="dom-heading-3">PoeMMS</h2>
+       <h2 class="dom-heading">Get an original, personalized poem texted to your cell phone.&nbsp;</h2>
+         <%= form_for(@user) do |f| %>
+             <%= render 'shared/error_messages' %>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
+             <%= f.label :phone, class:"dom-heading-1" %>
+             <%= f.text_field :phone, class:"textinput-1" %>
 
-      <%= f.label :phone %>
-      <%= f.text_field :phone %>
+             <%= f.label :prompt, class:"dom-heading-2" %>
+             <%= f.text_field :prompt, class:"textinput" %>
 
-      <%= f.label :prompt %>
-      <%= f.text_field :prompt %>
+       <br />
+       <br />
+             <%= f.submit "Text Me a Poem!", class: "basic-button"%>      
 
-      <%= f.label :bid %>
-      <%= f.text_field :bid %>
-<br />
-<br />
-      <%= f.submit "Text Me a Poem!", class: "btn btn-large btn-primary"%>      
-      
-    <% end %>
-  </div>
+           <% end %>
+      <!--   <input type="text" value="red wheelbarrow" class="textinput">
+     <input type="text" value="(XXX)-XXX-XXXX" class="textinput-1"> -->
+     </div>
+     <h2 class="dom-heading-4">FAQ</h2>
+     <h2 class="dom-heading-5">What do you do with my phone #?</h2>
+     <h2 class="dom-heading-6">I'd like to write poems too!</h2>
+     <h2 class="dom-heading-7">Your phone number is erased as soon as we send you the message. We don't share it
+       with anyone or anything.</h2>
+     <h2 class="dom-heading-8">Cool, send us an email.</h2>
+     <h2 class="dom-heading-10">Why does this site look/run like crap?</h2>
+      <h2 class="dom-heading-9">Because I don't know what I'm doing. Please email me if you see bugs.</h2>
+   </div>
 </div>
 </body>
 </html>
