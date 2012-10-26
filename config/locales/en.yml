@@ -9,8 +9,8 @@ en:
           user:
       attributes:
           user:
-              phone: "Phone number"
-              prompt: "Inspiration"
+              phone: "A phone number that can receive texts"
+              prompt: "A prompt, theme, or inspiration"
           
       errors:
           models:

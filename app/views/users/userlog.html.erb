@@ -2,11 +2,15 @@
 <head>
 </head>
 <body>
-    <%= @user.each do |i| %>
+
+<div id="rollcall">
+    <% @user.each do |i| %>
     <ul><%= i.id %> 
         <li><%= i.phone %></li>
         <li><%= i.prompt %></li>
     </ul>
     <% end %>
+</div>
+
 </body>
 </html>    

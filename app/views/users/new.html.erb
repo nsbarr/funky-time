@@ -16,34 +16,26 @@
 <div class="container">
 <!--<% provide(:title, 'Sign up') %> -->
 <div id="page-wrapper">
+    <h2 class="">PoeMMS</h2>
+       <h2 class="">Get an original, personalized poem texted to your cell phone.&nbsp;</h2>
      <div class="rectangle">
-       <h2 class="dom-heading-3">PoeMMS</h2>
-       <h2 class="dom-heading">Get an original, personalized poem texted to your cell phone.&nbsp;</h2>
+     </div>
          <%= form_for(@user) do |f| %>
              <%= render 'shared/error_messages' %>
 
-             <%= f.label :phone, class:"dom-heading-1" %>
-             <%= f.text_field :phone, class:"textinput-1" %>
-
-             <%= f.label :prompt, class:"dom-heading-2" %>
-             <%= f.text_field :prompt, class:"textinput" %>
+             <%= f.label :phone, class:"dom-heading" %>
+             <%= f.text_field :phone, :placeholder => "(###) ### - ####", class:"textinput" %>
+             
+             <%= f.label :prompt, class:"dom-heading-1" %>
+             <%= f.text_field :prompt, :placeholder => "a red wheelbarrow", class:"textinput-1" %>
 
        <br />
        <br />
-             <%= f.submit "Text Me a Poem!", class: "basic-button"%>      
+             <%= f.submit "Text Me a Poem!", class: "flat-button"%>      
 
            <% end %>
       <!--   <input type="text" value="red wheelbarrow" class="textinput">
      <input type="text" value="(XXX)-XXX-XXXX" class="textinput-1"> -->
-     </div>
-     <h2 class="dom-heading-4">FAQ</h2>
-     <h2 class="dom-heading-5">What do you do with my phone #?</h2>
-     <h2 class="dom-heading-6">I'd like to write poems too!</h2>
-     <h2 class="dom-heading-7">Your phone number is erased as soon as we send you the message. We don't share it
-       with anyone or anything.</h2>
-     <h2 class="dom-heading-8">Cool, send us an email.</h2>
-     <h2 class="dom-heading-10">Why does this site look/run like crap?</h2>
-      <h2 class="dom-heading-9">Because I don't know what I'm doing. Please email me if you see bugs.</h2>
    </div>
 </div>
 </body>

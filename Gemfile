@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
+#begin twilio bullshit
+gem 'twilio-ruby'
+#end twilio bullshit
+
 group :development do
   gem 'sqlite3', '1.3.5'
 end
