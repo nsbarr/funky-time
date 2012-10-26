@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     #@number_to_call = User.phone
     #end twilio bullshit
     number_to_send_to = @user.phone
+    theme = @user.prompt
 
      twilio_sid = "ACfff561dd3ac397a29183f7bf7d68e370"
      twilio_token = "cbb3471db9d83b61598159b5210404f1"
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
      @twilio_client.account.sms.messages.create(
        :from => "+1#{twilio_phone_number}",
        :to => number_to_send_to,
-       :body => "This is an message. It gets sent to #{number_to_send_to}"
+       :body => "Thanks, I'm dreaming up your poem about #{theme}"
      )
   end
   

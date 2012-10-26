@@ -85,7 +85,7 @@ input, textarea, select, .uneditable-input {
    width: 254px;
    height: 284px;
    position: absolute;
-   top: 220px;
+   top: 170px;
    left: 140px;
  }
  .textinput {
@@ -105,7 +105,7 @@ input, textarea, select, .uneditable-input {
    font-weight: normal;
    text-decoration: none;
    position: absolute;
-   top: 253px;
+   top: 203px;
    left: 420px;
  }
  .dom-heading {
@@ -122,7 +122,7 @@ input, textarea, select, .uneditable-input {
    text-align: left;
    line-height: 1.4814814814814814;
    position: absolute;
-   top: 222px;
+   top: 172px;
    left: 421px;
  }
  .dom-heading-1 {
@@ -139,7 +139,7 @@ input, textarea, select, .uneditable-input {
    text-align: left;
    line-height: 1.4814814814814814;
    position: absolute;
-   top: 341px;
+   top: 291px;
    left: 419px;
  }
  .textinput-1 {
@@ -157,7 +157,7 @@ input, textarea, select, .uneditable-input {
    font-weight: normal;
    text-decoration: none;
    position: absolute;
-   top: 372px;
+   top: 322px;
    left: 420px;
 
  }
@@ -173,7 +173,7 @@ input, textarea, select, .uneditable-input {
    border: none;
    text-decoration: none;
    position: absolute;
-   top: 465px;
+   top: 415px;
    left: 418px;
  }
  
@@ -208,7 +208,6 @@ input, textarea, select, .uneditable-input {
    background-color: #ffffff;
    border: 2px solid #000000;
    text-decoration: none;
-   text-shadow: #000000 0px 1px 1px;
    position: absolute;
    top: 177px;
    left: 233px;
@@ -246,4 +245,38 @@ input, textarea, select, .uneditable-input {
    position: absolute;
    top: 315px;
    left: 237px;
+ }
+ 
+ .title {
+   background-color: rgba(0, 0, 0, 0);
+   font-family: Arial;
+   border: none;
+   font-size: 48pt;
+   overflow: hidden;
+   width: 491px;
+   height: 87px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 20px;
+   left: 140px;
+ }
+ .tagline {
+   background-color: rgba(0, 0, 0, 0);
+   font-family: Arial;
+   border: none;
+   font-size: 16pt;
+   width: 554px;
+   height: 45px;
+   color: #333333;
+   font-weight: bold;
+   text-decoration: none;
+   text-align: left;
+   line-height: 1.2;
+   position: absolute;
+   top: 99px;
+   left: 140px;
  }
