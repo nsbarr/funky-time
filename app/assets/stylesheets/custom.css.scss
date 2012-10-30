@@ -213,7 +213,7 @@ input, textarea, select, .uneditable-input {
    left: 233px;
  }
  
- .premium-button {
+ .dwolla_button {
    width: 218px;
    height: 38px;
    border-radius: 20px;
@@ -280,4 +280,8 @@ input, textarea, select, .uneditable-input {
    position: absolute;
    top: 99px;
    left: 140px;
+ }
+ 
+ a:hover {
+     text-decoration:none;
  }
