@@ -14,6 +14,5 @@ class User < ActiveRecord::Base
   attr_accessible :bid, :phone, :prompt
   
   validates :prompt, presence: true, length: {maximum:40}
-  VALID_PHONE_REGEX = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/
-  validates :phone, presence: true, format: { with: VALID_PHONE_REGEX }
+  validates :phone, presence: true
 end

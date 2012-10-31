@@ -3,6 +3,11 @@
     <ul><%= i.id %> 
         <li><%= i.phone %></li>
         <li><%= i.prompt %></li>
+        <% if i.bid == nil%>
+            <li class = "notdone">needs poem!</li>
+        <% else %>
+            <li class = "done">done</li>
+        <% end %>
     </ul>
     <% end %>
 </div>
