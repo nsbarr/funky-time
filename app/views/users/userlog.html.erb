@@ -4,7 +4,7 @@
         <li><%= i.phone %></li>
         <li><%= i.prompt %></li>
         <% if i.bid == nil%>
-            <li class = "notdone">needs poem!</li>
+            <li class = "notdone">needs poem!<a href="/users/<%=i.id%>/edit">write it</li>
         <% else %>
             <li class = "done">done</li>
         <% end %>

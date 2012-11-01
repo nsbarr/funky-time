@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:success] = %Q[Thanks, I'll be texting you soon!]
+# noflash      flash[:success] = %Q[Thanks, I'll be texting you soon!]
      redirect_to @user
     else
       render 'new'
@@ -46,6 +46,31 @@ class UsersController < ApplicationController
  
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    number_to_send_to = @user.phone
+    theme = @user.prompt
+    twilio_sid = "ACfff561dd3ac397a29183f7bf7d68e370"
+    twilio_token = "cbb3471db9d83b61598159b5210404f1"
+    twilio_phone_number = "6464900303"
+    
+    if @user.update_attributes(params[:user])
+       poem = @user.bid
+       @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+       @twilio_client.account.sms.messages.create(
+         :from => "+1#{twilio_phone_number}",
+         :to => number_to_send_to,
+         :body => "#{poem}"
+       )      
+       redirect_to "/foo"    
+    else
+      render 'edit'
+    end
+  end
 end
 
 #
