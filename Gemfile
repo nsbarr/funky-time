@@ -14,14 +14,13 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
-  gem "therubyracer"
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"  
   gem 'uglifier', '1.2.3'
 end
 
+gem "therubyracer"
+gem "twitter-bootstrap-rails"  
+gem 'less-rails-bootstrap', '2.0.6'
 gem 'jquery-rails', '2.0.2'
 
 group :development, :test do
