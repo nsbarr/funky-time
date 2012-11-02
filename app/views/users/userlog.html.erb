@@ -1,13 +1,25 @@
-<div id="rollcall">
-    <% @user.each do |i| %>
-    <ul><%= i.id %> 
-        <li><%= i.phone %></li>
-        <li><%= i.prompt %></li>
-        <% if i.bid == nil%>
-            <li class = "notdone">needs poem!<a href="/users/<%=i.id%>/edit">write it</li>
-        <% else %>
-            <li class = "done">done</li><a href="/users/<%=i.id%>/edit">view it</li>
-        <% end %>
-    </ul>
-    <% end %>
-</div>
+<table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Phone Number</th>
+                  <th>Prompt</th>
+                  <th>Poem Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @user.each do |i| %>
+                <tr>
+                  <td><%= i.id %></td>
+                  <td><%= i.phone %></td>
+                  <td><%= i.prompt %></td>
+                  <% if i.bid == nil%>
+                  <td class="text-warning">Needs Poem. <a href="/users/<%=i.id%>/edit">Write it</a></td>
+                  <% else %>
+                  <td class="text-success">Poem Done. <a href="/users/<%=i.id%>/edit">View it</a></td>
+                  <% end %>
+                </tr>
+                <% end %>
+                <tr>
+              </tbody>
+</table>
