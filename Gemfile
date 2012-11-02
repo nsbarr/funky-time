@@ -18,6 +18,10 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
+gem "twitter-bootstrap-rails"
+gem 'less-rails-bootstrap', '2.0.6'
+gem 'jquery-rails', '2.0.2'
+gem "therubyracer"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -27,10 +31,6 @@ end
 gem 'annotate', '2.5.0', group: :development
 
 group :production do
-  gem "therubyracer"
-  gem "twitter-bootstrap-rails"
-  gem 'less-rails-bootstrap', '2.0.6'
-  gem 'jquery-rails', '2.0.2'
 end
 
 group :production do
