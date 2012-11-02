@@ -1,43 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="fontawesome.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Limelight%7CFlamenco%7CFedero%7CYesteryear%7CJosefin+Sans%7CSpinnaker%7CSansita+One%7CHandlee%7CDroid+Sans"
-    media="screen" rel="stylesheet" type="text/css" />
-    <!-- Typekit fonts require an account and a kit containing the fonts used. see https://typekit.com/plans
-    for details. <script type="text/javascript" src="//use.typekit.net/YOUR-KIT-ID.js"></script>
-      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    -->
-</head>
-<body>
-<div class="container">
-<!--<% provide(:title, 'Sign up') %> -->
-<div id="page-wrapper">
-    <div id="header">
-    <h2 class="title">The Lean Poet</h2>
-    <h2 class="lead">Fresh, homemade poems delivered to your phone.</h2>
-    </div>
-    
+    <h1>The Lean Poet</h1>
+    <p class="lead">Fresh, homemade poems delivered to your phone.</p>    
          <%= form_for(@user) do |f| %>
              <%= render 'shared/error_messages' %>
 
-             <%= f.label :phone, class:"dom-heading" %>
-             <%= f.text_field :phone, :placeholder => "(###) ### - ####", class:"textinput" %>
+             <%= f.label :phone %>
+             <%= f.text_field :phone, :placeholder => "(###) ### - ####" %>
              
-             <%= f.label :prompt, class:"dom-heading-1" %>
-             <%= f.text_field :prompt, :placeholder => "a red wheelbarrow", class:"textinput-1" %>
-
+             <%= f.label :prompt %>
+             <%= f.text_field :prompt, :placeholder => "a red wheelbarrow" %>
        <br />
        <br />
-             <%= f.submit "Text Me a Poem!", class: "flat-button"%>      
-
+             <%= f.submit "Text Me a Poem!" %>      
            <% end %>
-      <!--   <input type="text" value="red wheelbarrow" class="textinput">
-     <input type="text" value="(XXX)-XXX-XXXX" class="textinput-1"> -->
-   </div>
-</div>
-</body>
-</html>
