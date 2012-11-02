@@ -6,7 +6,7 @@
         <% if i.bid == nil%>
             <li class = "notdone">needs poem!<a href="/users/<%=i.id%>/edit">write it</li>
         <% else %>
-            <li class = "done">done</li>
+            <li class = "done">done</li><a href="/users/<%=i.id%>/edit">view it</li>
         <% end %>
     </ul>
     <% end %>
