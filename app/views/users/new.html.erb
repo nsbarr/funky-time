@@ -1,4 +1,3 @@
-    <h1>The Lean Poet</h1>
     <p class="lead">Fresh, homemade poems delivered to your phone.</p>    
          <%= form_for(@user) do |f| %>
              <%= render 'shared/error_messages' %>
@@ -10,5 +9,5 @@
              <%= f.text_field :prompt, :placeholder => "a red wheelbarrow" %>
        <br />
        <br />
-             <%= f.submit "Text Me a Poem!" %>      
+             <%= f.submit "Text Me a Poem!", :class => "btn btn-large btn-primary" %>      
            <% end %>
