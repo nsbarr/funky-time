@@ -26,12 +26,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </a>
-              <a class="brand" href="/">PoeMMS</a>
+              <a class="brand" href="/">Poems.io</a>
               <div class="nav-collapse collapse" style="height: 0px;">
                 <ul class="nav">
-                  <li><a href="/log">Backlog</a></li>
+                <% if request.fullpath == '/log'%>
+                  <li class = "active"><a href="/log">Backlog</a></li>
                   <li><a href="/about">About</a></li>
                   <li><a href="/contact">Contact</a></li>
+                 <% elsif request.fullpath == '/about'%>
+                    <li><a href="/log">Backlog</a></li>
+                    <li class = "active"><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                 <% elsif request.fullpath == '/contact'%>
+                    <li><a href="/log">Backlog</a></li>
+                    <li ><a href="/about">About</a></li>
+                    <li class = "active"><a href="/contact">Contact</a></li>
+                 <% else %>
+                   <li><a href="/log">Backlog</a></li>
+                   <li><a href="/about">About</a></li>
+                   <li><a href="/contact">Contact</a></li>
+                <% end %>
                 </ul>
               </div><!--/.nav-collapse -->
             </div>
