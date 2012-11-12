@@ -1,16 +1,16 @@
 FirstApp::Application.configure do
   
-# config.action_mailer.raise_delivery_errors = true
+config.action_mailer.raise_delivery_errors = true
   
-#  config.action_mailer.delivery_method = :smtp
-#  config.action_mailer.smtp_settings = {
-#    :address              => "smtp.gmail.com",
-#    :port                 => 25,
-#    :user_name            => 'nsbarr@gmail.com',
-#    :password             => 'mchlwn4uk',
-#    :authentication       => 'plain',
-#    :enable_starttls_auto => true  }
-    
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => 'poems.io',
+  :user_name            => 'bot@poems.io',
+  :password             => 'smtwtfs1234567',
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
     
   # Settings specified here will take precedence over those in config/application.rb
 
