@@ -25,7 +25,7 @@ before_filter :authenticate, :except => [:show, :about, :contact, :new, :create,
   def create
     @user = User.new(params[:user])
     if @user.save
-     #SendMail(broken) UserMailer.request_alert(@user).deliver
+     SendMail(broken) UserMailer.request_alert(@user).deliver
       #begin twilio bullshit
       #@number_to_call = User.phone
       #end twilio bullshit
