@@ -1,20 +1,31 @@
 require 'twilio-ruby'
 
+
 class UsersController < ApplicationController
+  
+before_filter :authenticate, :except => [:show, :about, :contact, :new, :create, :index, :edit, :update]
+  
   def show
     @user = User.find(params[:id])
   end
   
   def userlog
+    
     @user = User.all
   end
-    
+  
+  def about
+  end
+  
+  def contact
+  end
   def new
     @user = User.new
   end
   def create
     @user = User.new(params[:user])
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       #begin twilio bullshit
       #@number_to_call = User.phone
       #end twilio bullshit
@@ -40,10 +51,6 @@ class UsersController < ApplicationController
   end
   
   def index
-  end
-
-  def send_text_message
- 
   end
   
   def edit
@@ -71,6 +78,15 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+    protected
+
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "foo" && password == "bar"
+      end
+    end
+
 end
 
 #

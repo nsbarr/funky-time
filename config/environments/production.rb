@@ -1,4 +1,15 @@
 FirstApp::Application.configure do
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 465,
+    :user_name            => 'nsbarr',
+    :password             => 'mchlwn4uk',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+    
+    
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
