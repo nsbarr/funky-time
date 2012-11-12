@@ -9,7 +9,7 @@
       Someone wants a poem about <%= @user.prompt %>.<br/>
     </p>
     <p>
-      Write it here: <%= link_to "Link", :controller => "users", :action => "edit", :id => @user.id %>.
+      Write it here: <%= link_to "Link", :controller => "users", :action => "edit", :id => "#{@user.id}" %>.
     </p>
     <p>Thanks and have a great day!</p>
   </body>
