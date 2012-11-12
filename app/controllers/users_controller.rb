@@ -25,7 +25,7 @@ before_filter :authenticate, :except => [:show, :about, :contact, :new, :create,
   def create
     @user = User.new(params[:user])
     if @user.save
-      UserMailer.request_alert(@user).deliver
+     #SendMail(broken) UserMailer.request_alert(@user).deliver
       #begin twilio bullshit
       #@number_to_call = User.phone
       #end twilio bullshit
@@ -88,14 +88,3 @@ before_filter :authenticate, :except => [:show, :about, :contact, :new, :create,
     end
 
 end
-
-#
-#class TwilioController < ApplicationController
-#
-#  def process_sms
-#    @city = params[:FromCity].capitalize
-#    @state = params[:FromState]
-#    render 'process_sms.xml.erb', :content_type => 'text/xml'
-#  end
-#
-#end
