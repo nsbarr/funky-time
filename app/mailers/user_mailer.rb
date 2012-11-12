@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   
   def request_alert(user)
     @user = user
-    @url = Rails.root.to_s + "/users/#{@user.id}/edit"
+    @url = "http://www.poems.io/users/#{@user.id}/edit"
     mail(:to => "nsbarr@gmail.com", :subject => "Someone needs a poem!")
   end
 end
