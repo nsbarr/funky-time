@@ -3,7 +3,7 @@ require 'twilio-ruby'
 
 class UsersController < ApplicationController
   
-before_filter :authenticate, :except => [:show, :about, :contact, :new, :create, :index, :edit, :update]
+before_filter :authenticate, :except => [:show, :about, :contact, :new, :create, :index, :update]
   
   def show
     @user = User.find(params[:id])
