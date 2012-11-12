@@ -4,7 +4,7 @@ FirstApp::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
-    :port                 => 465,
+    :port                 => 587,
     :user_name            => 'nsbarr@gmail.com',
     :password             => 'mchlwn4uk',
     :authentication       => 'plain',
