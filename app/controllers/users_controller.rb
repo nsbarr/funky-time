@@ -25,19 +25,33 @@ before_filter :authenticate, :except => [:show, :about, :contact, :new, :create,
   def create
     @user = User.new(params[:user])
     if @user.save
-      UserMailer.request_alert(@user).deliver
-      #begin twilio bullshit
-      #@number_to_call = User.phone
-      #end twilio bullshit
+      
+      #Sends an email out when a user is created
+      #UserMailer.request_alert(@user).deliver
+      
+      #Set up the Twilio stuff
+      twilio_sid = "ACfff561dd3ac397a29183f7bf7d68e370"
+      twilio_token = "cbb3471db9d83b61598159b5210404f1"
+      twilio_phone_number = "6464900303"
       number_to_send_to = @user.phone
       theme = @user.prompt
-
-       twilio_sid = "ACfff561dd3ac397a29183f7bf7d68e370"
-       twilio_token = "cbb3471db9d83b61598159b5210404f1"
-       twilio_phone_number = "6464900303"
-
+      id = @user.id
+      url = "http://poems.io/users/#{id}/edit"
+      #Rolls the dice to select a poet
+      poet_to_send_to = ["9143934990","4782277137"].sample
+      
+      #Sends the request to the poet 
+      
        @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
 
+       @twilio_client.account.sms.messages.create(
+         :from => "+1#{twilio_phone_number}",
+         :to => poet_to_send_to,
+         :body => "Oh hey, won't you write someone a poem about #{theme}? You can do it here: #{url}"
+       )
+      
+      
+      #Sends a confirmation SMS to the user
        @twilio_client.account.sms.messages.create(
          :from => "+1#{twilio_phone_number}",
          :to => number_to_send_to,
@@ -66,13 +80,27 @@ before_filter :authenticate, :except => [:show, :about, :contact, :new, :create,
     twilio_phone_number = "6464900303"
     
     if @user.update_attributes(params[:user])
-       poem = @user.bid
+       poem_array = @user.bid.split(//)
+       #number_of_texts_to_send = poem_array.length/150.round
+       first_sms = poem_array[0..150].join
+       second_sms = poem_array[151..300].join
+       third_sms = poem_array[301..450].join
        @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
        @twilio_client.account.sms.messages.create(
          :from => "+1#{twilio_phone_number}",
          :to => number_to_send_to,
-         :body => "#{poem}"
-       )      
+         :body => "#{first_sms}"
+       )    
+          @twilio_client.account.sms.messages.create(
+            :from => "+1#{twilio_phone_number}",
+            :to => number_to_send_to,
+            :body => "#{second_sms}"
+          )
+             @twilio_client.account.sms.messages.create(
+               :from => "+1#{twilio_phone_number}",
+               :to => number_to_send_to,
+               :body => "#{third_sms}"
+             )  
        redirect_to "/foo"    
     else
       render 'edit'
