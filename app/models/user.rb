@@ -13,7 +13,7 @@
 class User < ActiveRecord::Base
   attr_accessible :bid, :phone, :prompt
   VALID_PHONE_REGEX = /^[+#*\(\)\[\]]*([0-9][ ext+-pw#*\(\)\[\]]*){10,45}$/
-  validates :prompt, presence: true, length: {maximum:40}
+  validates :prompt, presence: true, length: {maximum:40 }
   validates :phone, presence: true, format: { with: VALID_PHONE_REGEX }
-  validates :bid, length: {maximum:450}
+  validates :bid, length: {maximum:450 }
 end

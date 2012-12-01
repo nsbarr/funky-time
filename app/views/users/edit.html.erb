@@ -1,7 +1,8 @@
 <h1>Write a poem for <%= @user.phone %> about <%= @user.prompt %></h1>
+<%= render 'shared/error_messages' %>
+
 
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
 
       <%= f.text_area :bid %>
 <br />
