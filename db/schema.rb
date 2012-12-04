@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020003259) do
+ActiveRecord::Schema.define(:version => 20121201213558) do
 
   create_table "users", :force => true do |t|
     t.string   "phone"
     t.string   "prompt"
     t.string   "bid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "poet",       :default => false
   end
 
 end

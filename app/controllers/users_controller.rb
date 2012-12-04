@@ -80,27 +80,13 @@ before_filter :authenticate, :except => [:show, :about, :contact, :new, :create,
     twilio_phone_number = "6464900303"
     
     if @user.update_attributes(params[:user])
-       poem_array = @user.bid.split(//)
-       #number_of_texts_to_send = poem_array.length/150.round
-       first_sms = poem_array[0..150].join
-       second_sms = poem_array[151..300].join
-       third_sms = poem_array[301..450].join
+       poem_text = @user.bid
        @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
        @twilio_client.account.sms.messages.create(
          :from => "+1#{twilio_phone_number}",
          :to => number_to_send_to,
-         :body => "#{first_sms}"
+         :body => "#{poem_text}"
        )    
-          @twilio_client.account.sms.messages.create(
-            :from => "+1#{twilio_phone_number}",
-            :to => number_to_send_to,
-            :body => "#{second_sms}"
-          )
-             @twilio_client.account.sms.messages.create(
-               :from => "+1#{twilio_phone_number}",
-               :to => number_to_send_to,
-               :body => "#{third_sms}"
-             )  
        redirect_to "/foo"    
     else
       render 'edit'
